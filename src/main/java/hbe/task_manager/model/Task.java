@@ -15,12 +15,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Task {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTask;
-    private String taskDescription;
-    private String responsable;
+    private String taskName;
+    private String owner;
     private String status;
-
 }

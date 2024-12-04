@@ -27,6 +27,7 @@ public class TaskSystemFx extends Application {
         stage.show();
     }
 
+    @Override
     public void stop() {
         applicationContext.close();
         Platform.exit();

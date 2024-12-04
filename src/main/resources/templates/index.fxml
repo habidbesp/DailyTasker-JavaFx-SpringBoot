@@ -1,11 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hbe.task_manager.controller.IndexController">
-   <children>
-      <Label layoutX="250.0" layoutY="36.0" text="Daily Task System" />
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="hbe.task_manager.controller.IndexController">
+    <children>
+        <Label layoutX="285.0" layoutY="22.0" text="Daily Tasker" textFill="#396de5">
+            <font>
+                <Font name="Comic Sans MS Bold" size="26.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="taskView" layoutX="248.0" layoutY="83.0" onMouseClicked="#loadTaskForm" prefHeight="200.0"
+                   prefWidth="433.0">
+            <columns>
+                <TableColumn fx:id="idTaskColumn" prefWidth="45.0" text="ID"/>
+                <TableColumn fx:id="taskNameColumn" prefWidth="148.0" text="Task"/>
+                <TableColumn fx:id="ownerColumn" minWidth="0.0" prefWidth="137.0" text="Owner"/>
+                <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="101.0" text="Status"/>
+            </columns>
+        </TableView>
+        <AnchorPane layoutX="14.0" layoutY="83.0" prefHeight="200.0" prefWidth="212.0">
+            <children>
+                <Label layoutX="22.0" layoutY="10.0" text="Task" textFill="#457b9b">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="21.0" layoutY="70.0" text="Owner" textFill="#457b9b">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="23.0" layoutY="129.0" text="Status" textFill="#457b9b">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="taskNameText" layoutX="23.0" layoutY="34.0"/>
+                <TextField fx:id="ownerText" layoutX="24.0" layoutY="96.0"/>
+                <TextField fx:id="statusText" layoutX="24.0" layoutY="155.0"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="68.0" layoutY="298.0" prefHeight="76.0" prefWidth="594.0">
+            <children>
+                <Button fx:id="addButton" alignment="CENTER" layoutX="32.0" layoutY="22.0" mnemonicParsing="false"
+                        onAction="#addTask" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #1d3557;"
+                        text="Add" textFill="#f1faee">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="modifyButton" alignment="CENTER" layoutX="178.0" layoutY="22.0" mnemonicParsing="false"
+                        onAction="#modifyTask" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #1d3557;"
+                        text="Modify" textFill="#f1faee">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="deleteButton" alignment="CENTER" layoutX="330.0" layoutY="22.0" mnemonicParsing="false"
+                        onAction="#deleteTask" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #e63946;"
+                        text="Delete" textFill="#f1faee">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="clearFormButton" alignment="CENTER" layoutX="470.0" layoutY="22.0"
+                        mnemonicParsing="false" onAction="#clearFormTask" prefHeight="32.0" prefWidth="98.0"
+                        style="-fx-background-color: #ffd60a;" text="Clear Form">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

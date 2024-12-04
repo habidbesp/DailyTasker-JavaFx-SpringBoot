@@ -20,7 +20,8 @@ public class TaskService implements ITaskService{
 
     @Override
     public Task findTaskById(Integer idTask) {
-     return taskRepository.findById(idTask).orElse(null);
+        Task task = taskRepository.findById(idTask).orElse(null);
+     return task;
     }
 
     @Override
